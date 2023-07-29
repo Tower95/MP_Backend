@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+const app = require('../app');
+const http = require('http');
+
+//Get port from environment and store in Express.
+const port = process.env.PORT || '3000';
+
+//Pass the port to the express app
+app.set('port', port);
+
+//Create HTTP server.
+const server = http.createServer(app);
+
+// Expose the port
+server.listen(port);
+
+console.log(`Server running on port: ${port}`);
+
+
+
