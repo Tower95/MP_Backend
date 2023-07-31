@@ -22,7 +22,9 @@ const sequelize = new Sequelize(name, user, pass, {
 })
 
 const db = {
-  User: require('../../../components/v1/users/model')(sequelize, Sequelize)
+  User: require('../../../components/v1/users/model')(sequelize, Sequelize),
+  Product: require('../../../components/v1/products/model')(sequelize, Sequelize),
+  Order: require('../../../components/v1/orders/model')(sequelize, Sequelize),
 }
 
 Object.keys(db).forEach(key => {

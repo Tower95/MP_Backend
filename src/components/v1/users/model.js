@@ -22,5 +22,13 @@ module.exports = (sequelize, DataTypes) => {
     freezeTableName: true
   })
 
+  // Associations to Order
+  User.associate = function (models) {
+    User.hasMany(models.Order, {
+      foreignKey: 'user_id',
+      onDelete: 'CASCADE',
+    })
+  }
+
   return User
 }

@@ -9,7 +9,7 @@ const logger = require('./src/utils/logs')
 const { sequelize } = require('./src/service/db/postgres/db')
 
 // sync the database
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: true }).then(() => {
   logger.info('Database & tables created!')
 })
 
